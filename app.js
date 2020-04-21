@@ -1,4 +1,3 @@
-
 /**
  * Copyright 2017-present, Facebook, Inc. All rights reserved.
  *
@@ -21,7 +20,7 @@
  */
 
 'use strict';
-const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+const PAGE_ACCESS_TOKEN = 'EAAHL6EmZBrUkBAGbUW73GzvRWOGOVlL0tRRElM8ftFiYGeDWmDTpZBtjoYvpfjLSiym8VGVd7VoOdrHAvGjOQLrGaT5Ucz3uvm3Mp1kbZB3I7HzSrtdUS84bs7losg4hYLXZCnE5WpYb6kDN800kgB5lK03pRH3I5xkgdQ8VlwZDZD';
 // Imports dependencies and set up http server
 const 
   request = require('request'),
@@ -34,7 +33,6 @@ app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 // Accepts POST requests at /webhook endpoint
 app.post('/webhook', (req, res) => {  
-
   // Parse the request body from the POST
   let body = req.body;
 
@@ -74,9 +72,8 @@ app.post('/webhook', (req, res) => {
 
 // Accepts GET requests at the /webhook endpoint
 app.get('/webhook', (req, res) => {
-  
   /** UPDATE YOUR VERIFY TOKEN **/
-  const VERIFY_TOKEN = "<YOUR VERIFY TOKEN>";
+  const VERIFY_TOKEN = PAGE_ACCESS_TOKEN;
   
   // Parse params from the webhook verification request
   let mode = req.query['hub.mode'];
